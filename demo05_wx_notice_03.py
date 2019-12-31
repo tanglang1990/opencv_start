@@ -1,14 +1,11 @@
 import json
 
-import requests # HTTP库
+import requests
 
-# 把代码从面向过程变成面向函数
+
 # 我们可以接受定义的复杂，但是不能接受调用的复杂
 # 把代码从面向函数改成面向对象
 
-# 1. 获取access_token
-# https请求方式: GET 
-# https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
 
 class WxTools():
     
@@ -34,11 +31,6 @@ class WxTools():
             }
         }
         requests.post(url, data=json.dumps(req_data, ensure_ascii=False).encode('utf-8'))
-    
-
-# 2. 利用access_token发送微信的通知
-# http请求方式: POST
-# https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN
 
 
 if __name__ == "__main__":
